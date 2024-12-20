@@ -4,5 +4,5 @@
 
 layout: home
 
-Hello World 2
+
 ---
