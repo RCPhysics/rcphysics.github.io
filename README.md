@@ -10,7 +10,7 @@ See more info at https://academicpages.github.io/
 1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
 
 # Reminders
-- The front page is located at [_pages/_about.md](/_pages/_about.md)
+- The front page is located at [_pages/about.md](/_pages/about.md)
 
 # Maintenance
 
