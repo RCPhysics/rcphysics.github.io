@@ -9,7 +9,10 @@ See more info at https://academicpages.github.io/
 
 1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
 
- # Maintenance
+# Reminders
+- The front page is located at [_pages/about.md](/_pages/about.md)
+
+# Maintenance
 
 Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
 
