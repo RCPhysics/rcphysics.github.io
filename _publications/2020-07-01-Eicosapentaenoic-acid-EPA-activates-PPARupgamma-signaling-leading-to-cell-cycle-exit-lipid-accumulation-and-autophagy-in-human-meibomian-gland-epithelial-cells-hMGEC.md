@@ -1,6 +1,7 @@
 ---
-title: "Eicosapentaenoic acid (EPA) activates PPAR$upgamma$ signaling leading to cell cycle exit, lipid accumulation, and autophagy in human meibomian gland epithelial cells (hMGEC)"
+title: "Eicosapentaenoic acid (EPA) activates PPARγ signaling leading to cell cycle exit, lipid accumulation, and autophagy in human meibomian gland epithelial cells (hMGEC)"
 collection: publications
+category: manuscripts
 permalink: /publication/2020-07-01-Eicosapentaenoic-acid-EPA-activates-PPARupgamma-signaling-leading-to-cell-cycle-exit-lipid-accumulation-and-autophagy-in-human-meibomian-gland-epithelial-cells-hMGEC
 date: 2020-07-01
 venue: 'The Ocular Surface'
