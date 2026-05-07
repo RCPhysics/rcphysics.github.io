@@ -49,6 +49,28 @@ Our students are building **open-source, open-hardware bioreactors** at the 1–
 
 ---
 
+## Laboratory Members
+
+<div style="display: flex; flex-direction: column; gap: 2em; margin-top: 1em; padding-left: 1.5em;">
+{% for member in site.data.members %}
+  <div style="display: flex; align-items: flex-start; gap: 1.5em;">
+    {% if member.photo and member.photo != "" %}
+      <img src="{{ base_path }}/images/members/{{ member.photo }}" alt="{{ member.name }}"
+           style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; flex-shrink: 0;">
+    {% else %}
+      <div style="width: 120px; height: 120px; border-radius: 50%; background: #e0e0e0; flex-shrink: 0;"></div>
+    {% endif %}
+    <div>
+      <strong style="font-size: 1.05em;">{{ member.name }}</strong><br>
+      <em style="font-size: 0.88em; color: #666;">{{ member.role }}</em>
+      <p style="font-size: 0.9em; margin-top: 0.4em; color: #444;">{{ member.bio }}</p>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+---
+
 ## Join the Lab
 
 We are always looking for curious, motivated students at the undergraduate and graduate level. If any of these projects interest you, reach out at [princerc@etsu.edu](mailto:princerc@etsu.edu).
