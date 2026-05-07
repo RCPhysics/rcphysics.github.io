@@ -156,31 +156,6 @@ redirect_from:
 
 ---
 
-## Highlighted Presentations
-
-**Biomanufacturing & Engineering for the Appalachian Highlands**
-June 2024 — ASEE Annual Conference & Exposition, Portland, OR
-
-**A brief history of SRS Imaging & update on present results in imaging glucose metabolism** *(Invited)*
-October 2023 — Southeastern Regional Meeting of the American Chemical Society, Durham, NC
-
-**Exploring Lipid Production through Vibrational Spectroscopy**
-March 2023 — Biosciences Seminar, ETSU
-
-**Science & Service — Combining Laboratory Science & Science Advocacy** *(Invited)*
-February 2023 — Chancellor's Honors Seminar, University of Tennessee, Knoxville
-
-**Decreasing Volume, Increasing Impact: Stimulated Raman Scattering Imaging**
-August 2022 — 27th International Conference on Raman Spectroscopy, Long Beach, CA
-
-**Analysis of Lipid Expression in Meibomian Glands by Stimulated Raman Scattering**
-February 2019 — Photonics West, SPIE, San Francisco, CA
-
-**Letting Evidence Lead the Way: How Scientific Principles Can Improve Government**
-January 2018 — Brews & Brains, Costa Mesa, CA
-
----
-
 ## Publications
 
 <ul>{% for post in site.publications reversed %}
