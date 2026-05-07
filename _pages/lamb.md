@@ -12,7 +12,9 @@ Our students get hands-on experience building instrumentation, designing experim
 
 ## Active Projects
 
-### Downstream Processing Workforce Development
+<details>
+<summary><strong>Downstream Processing Workforce Development</strong></summary>
+<div markdown="1">
 
 The emerging bioeconomy needs trained workers who understand not just how to grow biological products, but how to get them out. We are developing a suite of hybrid online and in-person training modules focused on **downstream processing** — the set of techniques used to separate and purify a valuable product once it has been produced in a living system.
 
@@ -26,9 +28,12 @@ Our curriculum covers:
 
 This project is part of a broader effort to build bioeconomy workforce capacity in the Appalachian region, funded by over $1.3M in grants for biomanufacturing workforce development.
 
----
+</div>
+</details>
 
-### Raman Spectroscopy in Mycological Systems
+<details>
+<summary><strong>Raman Spectroscopy in Mycological Systems</strong></summary>
+<div markdown="1">
 
 Yeasts and fungi are metabolically rich, biochemically complex, and largely underexplored as targets for vibrational imaging. Their distinct lipid profiles, cell wall compositions, and metabolic signatures make them ideal candidates for Raman-based analysis.
 
@@ -39,13 +44,19 @@ We are developing techniques to apply **Raman spectroscopy** to mycological syst
 
 This work connects directly to biomanufacturing applications, where knowing what an organism is doing — and when — is critical to optimizing yield.
 
----
+</div>
+</details>
 
-### Open-Hardware Bioreactor Development
+<details>
+<summary><strong>Open-Hardware Bioreactor Development</strong></summary>
+<div markdown="1">
 
 Optimizing biological processes requires the ability to run many experiments, vary conditions, and iterate quickly. For resource-limited labs and institutions, the cost of commercial bioreactor systems is a significant barrier.
 
 Our students are building **open-source, open-hardware bioreactors** at the 1–2 liter scale using off-the-shelf components and widely available control systems. The goal is to produce well-documented, reproducible designs that other low-resource labs can build and adapt — lowering the barrier to entry for bioprocess research and training across the region.
+
+</div>
+</details>
 
 ---
 
