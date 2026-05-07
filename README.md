@@ -5,18 +5,25 @@ This is the GitHub Source for the academic profile of Dr. Richard C. Prince base
 **Academic Pages is a Github Pages template for academic websites.**
 See more info at https://academicpages.github.io/
 
-# Getting Started
+# Reminders & Quicklinks
 
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+|Page Name    |Link                                       |
+|-------------|-------------------------------------------|
+|Front Page   |[_pages/about.md](/_pages/about.md)        |
+|Guide Page   |[_pages/markdown.md](/_pages/markdown.md)  |
 
 # Reminders
 - The front page is located at [_pages/about.md](/_pages/about.md)
 
 # Maintenance
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+# For more info
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
+More info about configuring Academic Pages can be found in the guide, the growing wiki, and you can always ask a question on GitHub. The guides for the Minimal Mistakes theme (which this theme was forked from) might also be helpful.
+
+# Maintenance
+
+Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
 
 ## Bugfixes and enhancements
 

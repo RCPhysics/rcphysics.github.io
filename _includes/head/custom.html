@@ -29,4 +29,34 @@
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+<!-- Accordion styles for details/summary -->
+<style>
+  details {
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 0.5em;
+  }
+  details summary {
+    cursor: pointer;
+    padding: 0.75em 0;
+    font-size: 1.1em;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::before {
+    content: "▶";
+    font-size: 0.7em;
+    transition: transform 0.2s ease;
+    color: #666;
+  }
+  details[open] summary::before {
+    transform: rotate(90deg);
+  }
+  details > div {
+    padding: 0.5em 0 1em 1.5em;
+  }
+</style>
+
 <!-- end custom head snippets -->
