@@ -2,7 +2,7 @@
 title: "Stimulated Raman scattering: Ensembles to single molecules"
 collection: publications #Be sure to include this or it won't post to the website
 category: books #Be sure to include this or it won't post to the website
-permalink: /publication/pub_template #should include the date_name filename
+permalink: /publication/2022-01-01-srs-chapter #should include the date_name filename
 excerpt: 'This book chapter provides an overview of the discovery and history of Stimulated Raman Scattering and gives numerous examples of its use cases throughout the years.'
 date: 2022-01-01
 venue: 'Stimulated Raman Scattering Microscopy: Techniques and Applications' #Name of the journal where the paper was published

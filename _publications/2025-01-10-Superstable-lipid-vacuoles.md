@@ -2,7 +2,7 @@
 title: "Superstable lipid vacuoles endow cartilage with its shape and biomechanics"
 collection: publications #Be sure to include this or it won't post to the website
 category: manuscripts #Be sure to include this or it won't post to the website
-permalink: /publication/2024-01-10-Superstable-lipid-vacuoles #should include the date_name filename
+permalink: /publication/2025-01-10-Superstable-lipid-vacuoles #should include the date_name filename
 excerpt: 'This study identifies lipochondrocytes, lipid-filled cells in mammalian cartilage, which use de novo lipogenesis to produce stable lipid droplets that influence cartilage biomechanics by reducing stiffness and resilience, providing a unique alternative to traditional extracellular matrix structures.'
 date: 2025-01-10
 venue: 'Science' #Name of the journal where the paper was published
