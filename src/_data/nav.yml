@@ -1,0 +1,16 @@
+# =========================================================================
+# Navigation items — used in header, side rail (if reintroduced), and
+# footer "the site" column. Edit here to change every nav location.
+#
+# `ord` is the original numeric prefix from chrome.jsx (·00, ·01, ...);
+# kept in case you want to add it back to a side-rail variant later.
+# =========================================================================
+
+items:
+  - { id: home,         label: Home,         url: /,              ord: "00" }
+  - { id: research,     label: Research,     url: /research/,     ord: "01" }
+  - { id: lamb,         label: LAMB,         url: /lamb/,         ord: "02" }
+  - { id: publications, label: Publications, url: /publications/, ord: "03" }
+  - { id: teaching,     label: Teaching,     url: /teaching/,     ord: "04" }
+  - { id: cv,           label: CV,           url: /cv/,           ord: "05" }
+  - { id: contact,      label: Contact,      url: /contact/,      ord: "06" }

@@ -1,0 +1,36 @@
+# =========================================================================
+# Laboratory members — rendered on /lamb/ as member-cards.
+# Source: _data/members.yml on the live site.
+#
+# To add a member, copy a block and fill in the fields.
+#   photo    — filename in src/assets/images/members/ (leave blank for the
+#              monogram-initial fallback the template draws automatically)
+#   initials — shown in the avatar when no photo is set
+# =========================================================================
+
+items:
+  - name: Richard C. Prince, PhD
+    role: Principal Investigator
+    since: "2021"
+    initials: RCP
+    photo: profile.png
+    bio: >-
+      Assistant Professor and Biomedical Engineering Technology Coordinator at
+      ETSU. Research in vibrational microscopy, nonlinear optical imaging, and
+      open-hardware bioengineering. PhD in Biophotonics from UC Irvine; NSF
+      IGERT fellow.
+
+# -------------------------------------------------------------------------
+# Lab alumni — rendered on /lamb/ under "Lab alumni". Leave the list empty
+# (as below) to show the "will be listed here" placeholder. To add an alum,
+# uncomment a block and fill it in:
+#   role — their role and years in the lab (e.g. "Graduate Student · 2021–2024")
+#   now  — where they are now (optional)
+# -------------------------------------------------------------------------
+alumni: []
+  # - name: First Last
+  #   role: Graduate Student · 2021–2024
+  #   now: PhD student, University of Somewhere
+  # - name: First Last
+  #   role: Undergraduate Researcher · 2022–2023
+  #   now: MS program, Some Institute

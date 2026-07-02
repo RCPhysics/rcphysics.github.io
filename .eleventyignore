@@ -1,0 +1,8 @@
+# Repo-root documentation files — read by humans and agents, not by Eleventy.
+# Without this, Eleventy would try to parse them as templates and choke on
+# any pipe characters or Liquid-looking syntax in the Markdown.
+# Paths are relative to the project root, not the input directory.
+./README.md
+./AGENTS.md
+./CLAUDE.md
+./SESSION-SUMMARY.md

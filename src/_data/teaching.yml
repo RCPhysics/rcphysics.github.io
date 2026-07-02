@@ -1,0 +1,56 @@
+# =========================================================================
+# Teaching content — rendered on /teaching/.
+# Source: the Teaching Experience section of the live site's CV.
+#
+# `courses` become course-cards; `code` fills the large display slot.
+# `mentorship` is the list of areas students are mentored in.
+# =========================================================================
+
+philosophy: >-
+  Two to three courses a semester, taught with active-learning techniques and
+  a strong hands-on, build-it component. The through-line is connecting the
+  bench to real-world impact: students design experiments, build
+  instrumentation, and reason about how engineering meets people.
+
+courses:
+  - code: "NOW"
+    label: ETSU · 2021–present
+    title: Biomedical Engineering Technology
+    desc: >-
+      Two to three courses per semester in the BMET program, taught with active
+      learning. Coordinates two sections of biomedical industrial internships
+      each semester and aligned the curriculum with current industry standards.
+    meta: [active learning, internships, BMET]
+
+  - code: "TA"
+    label: UC Irvine · 2020–2021
+    title: Data Acquisition Laboratory
+    desc: >-
+      Developed and delivered a distance-based data-acquisition lab for BME
+      undergraduates: biomedical sensor design (optical plethysmographs and
+      oximeters), open-source LabVIEW control of Arduino hardware, and lectures
+      on engineering ethics and inclusive design.
+    meta: [sensors, LabVIEW, ethics]
+
+  - code: "GS"
+    label: TN Governor's School · 2015
+    title: Effects of Science on Society
+    desc: >-
+      Co-created curriculum for a summer science-policy course, introducing
+      case-study pedagogy to the UTK science-policy curriculum.
+    meta: [science policy, curriculum]
+
+  - code: "TA"
+    label: UT Knoxville · 2013–2015
+    title: Introductory & Modern Physics
+    desc: >-
+      Led flipped-classroom sessions, laboratory exercises, and office hours
+      for introductory physics for non-majors and modern physics for majors.
+    meta: [flipped classroom, physics]
+
+mentorship:
+  - process control
+  - biomedical education
+  - culturally sensitive medicine
+  - photonic sensors
+  - assistive devices

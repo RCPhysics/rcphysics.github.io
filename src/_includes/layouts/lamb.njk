@@ -1,0 +1,154 @@
+{# ===========================================================================
+   layouts/lamb.njk
+   ---------------------------------------------------------------------------
+   The LAMB page (the lab/group page): intro deck (page-title) · pointer to
+   the Research page for the science · equipment expertise · lab members ·
+   lab alumni · join-the-lab CTA.
+   Data: equipment.yml, members.yml.
+   ============================================================================ #}
+{% extends "base.njk" %}
+
+{% block content %}
+
+{# --- Reusable 3-up card grid (used by both work sections) ---------------- #}
+{% macro cards(list) %}
+  <div class="work-grid">
+    {% for c in list %}
+      <div class="work-card">
+        <span class="tick tl"></span><span class="tick br"></span>
+        <div class="work-figure{% if not c.photo %} is-empty{% endif %}">
+          {% if c.photo %}
+            <img src="/assets/images/equipment/{{ c.photo }}" alt="{{ c.title }}">
+          {% else %}
+            <span class="placeholder">Image · upload</span>
+          {% endif %}
+        </div>
+        <div class="head">
+          <span class="id">{{ c.id }}</span>
+        </div>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.desc }}</p>
+        <div class="meta">
+          {% for m in c.meta %}<span>{{ m }}</span>{% if not loop.last %}<span>·</span>{% endif %}{% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endmacro %}
+
+{% include "partials/page-title.njk" %}
+
+{# --- Pointer to the science (which lives on the Research page) ----------- #}
+<section class="section no-rule" style="padding-bottom:24px;">
+  <div class="container">
+    <p style="font-family:var(--font-display); font-style:italic; font-size:20px; color:var(--ink-2); margin:0 0 16px; max-width:56ch;">
+      What we study and why lives on the research page. This page is the lab
+      itself: the tools, the people, and how to join.
+    </p>
+    <a class="btn btn-ghost" href="/research/" style="padding-left:0;">
+      See the research <span class="arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+{# --- Equipment & technical expertise ------------------------------------- #}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="id-col">
+        <span class="eyebrow">Equipment expertise</span>
+      </div>
+      <h2>The tools we build and run.</h2>
+    </div>
+    {{ cards(equipment.items) }}
+  </div>
+</section>
+
+{# --- Lab members --------------------------------------------------------- #}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="id-col">
+        <span class="eyebrow">People</span>
+      </div>
+      <h2>Laboratory members.</h2>
+    </div>
+
+    <div class="member-grid">
+      {% for m in members.items %}
+        <div class="member-card">
+          <span class="since">{{ m.since }}</span>
+          <div class="avatar">
+            {% if m.photo %}
+              <img src="/assets/images/members/{{ m.photo }}" alt="{{ m.name }}"
+                   style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+            {% else %}
+              {{ m.initials }}
+            {% endif %}
+          </div>
+          <div class="role">{{ m.role }}</div>
+          <h3 class="name">{{ m.name }}</h3>
+          <p class="blurb">{{ m.bio }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# --- Alumni -------------------------------------------------------------- #}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="id-col">
+        <span class="eyebrow">Alumni</span>
+      </div>
+      <h2>Lab alumni.</h2>
+    </div>
+
+    {% if members.alumni | length %}
+      <div class="member-grid">
+        {% for a in members.alumni %}
+          <div class="member-card">
+            <div class="role">{{ a.role }}</div>
+            <h3 class="name">{{ a.name }}</h3>
+            {% if a.now %}<p class="blurb">Now: {{ a.now }}</p>{% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p style="font-family:var(--font-display); font-style:italic; font-size:18px; color:var(--ink-3); margin:0;">
+        Alumni will be listed here as students move on to their next steps.
+      </p>
+    {% endif %}
+  </div>
+</section>
+
+{# --- Join the lab -------------------------------------------------------- #}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="id-col">
+        <span class="eyebrow">Openings</span>
+      </div>
+      <h2>Join the lab.</h2>
+    </div>
+
+    <div class="position-card">
+      <div class="level">
+        <span class="lvl">Undergrad · Grad</span>
+        Open
+      </div>
+      <div class="body">
+        <h4>Curious, motivated students</h4>
+        <p>
+          We are always looking for students at the undergraduate and graduate
+          level. If any of these projects interest you, get in touch — tell us
+          what you want to build.
+        </p>
+      </div>
+      <a class="btn btn-glass" href="mailto:{{ site.email }}">Email the lab ↗</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

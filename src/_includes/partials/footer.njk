@@ -1,0 +1,54 @@
+{# ===========================================================================
+   partials/footer.njk
+   ---------------------------------------------------------------------------
+   Site footer. Translates the Footer component in chrome.jsx.
+   Section links are generated from nav.items; scholarly + social links
+   come from _data/site.yml so a single edit propagates everywhere.
+   ============================================================================ #}
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="top">
+      <div class="blurb">
+        <img src="/assets/images/RCP-Logo.png" alt="RCPhysics">
+        <p>
+          Richard C. Prince, PhD — Assistant Professor at East Tennessee
+          State University. Director of the LAMB. Optics, microscopy,
+          open-hardware bioengineering, and the occasional dive trip.
+        </p>
+      </div>
+
+      <div class="cols">
+        <div class="col">
+          <h4>The site</h4>
+          {% for item in nav.items %}
+            {% if item.id != 'home' %}
+              <a href="{{ item.url }}">{{ item.label }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="col">
+          <h4>Scholarly</h4>
+          <a href="{{ site.scholar }}"     target="_blank" rel="noopener">Google Scholar ↗</a>
+          <a href="{{ site.orcid }}"       target="_blank" rel="noopener">ORCID ↗</a>
+          <a href="{{ site.github }}"      target="_blank" rel="noopener">Github ↗</a>
+        </div>
+
+        <div class="col">
+          <h4>Social</h4>
+          <a href="{{ site.bluesky }}"     target="_blank" rel="noopener">Bluesky ↗</a>
+          <a href="{{ site.mastodon }}"    target="_blank" rel="noopener">Mastodon ↗</a>
+          <a href="{{ site.linkedin }}"    target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="{{ site.keybase }}"     target="_blank" rel="noopener">Keybase ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <span>© {{ site.year }} · {{ site.author }} · Johnson City, Tenn.</span>
+      <span>|made at the bench⟩</span>
+    </div>
+
+  </div>
+</footer>

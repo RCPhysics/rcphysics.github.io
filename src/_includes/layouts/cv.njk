@@ -1,0 +1,51 @@
+{# ===========================================================================
+   layouts/cv.njk
+   ---------------------------------------------------------------------------
+   CV page. One cv-section per list in _data/cv.yml, each rendered through
+   the cv_list macro (when · what/org · where). Add or reorder sections by
+   editing the `sections` list below and the matching keys in cv.yml.
+   ============================================================================ #}
+{% extends "base.njk" %}
+
+{% block content %}
+
+{# --- One reusable section renderer --------------------------------------- #}
+{% macro cv_list(heading, rows) %}
+  <div class="cv-section">
+    <h3>{{ heading }}</h3>
+    {% for r in rows %}
+      <div class="cv-row">
+        <div class="when">{{ r.when }}</div>
+        <div class="what">
+          <p class="title">{{ r.title }}</p>
+          {% if r.org %}<p class="org">{{ r.org }}</p>{% endif %}
+        </div>
+        {% if r.where %}<div class="where">{{ r.where }}</div>{% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endmacro %}
+
+{% include "partials/page-title.njk" %}
+
+<section class="section no-rule">
+  <div class="container-tight">
+    {{ cv_list("Education",              cv.education)  }}
+    {{ cv_list("Professional Experience", cv.experience) }}
+    {{ cv_list("Research Experience",    cv.research)   }}
+    {{ cv_list("Grants & Professional Development", cv.grants) }}
+    {{ cv_list("Leadership & Service",   cv.service)    }}
+    {{ cv_list("Honors",                 cv.honors)     }}
+
+    <div style="margin-top:48px; display:flex; gap:16px; flex-wrap:wrap; align-items:center;">
+      <a class="btn btn-secondary" href="{{ site.scholar }}" target="_blank" rel="noopener">
+        Publications on Scholar ↗
+      </a>
+      <a class="btn btn-ghost" href="{{ site.orcid }}" target="_blank" rel="noopener">
+        ORCID <span class="arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

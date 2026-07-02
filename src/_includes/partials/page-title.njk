@@ -1,0 +1,27 @@
+{# ===========================================================================
+   partials/page-title.njk
+   ---------------------------------------------------------------------------
+   The eyebrow row + display heading + deck. Translates PageTitle from
+   chrome.jsx. Inputs come from page front matter:
+
+     eyebrow       — left-side eyebrow text   (e.g. "§ 03 · Publications")
+     fig           — right-side eyebrow       (e.g. "COUNT · 12")
+                     If omitted, defaults to nothing.
+     heading_html  — h1 contents, may include <em> for italicized words.
+                     Use the `safe` filter to allow markup.
+     deck          — paragraph below the heading.
+   ============================================================================ #}
+<header class="page-title">
+  <div class="container">
+
+    <div class="eyebrow-row">
+      <span class="eyebrow">{{ eyebrow }}</span>
+      {% if fig %}<span class="eyebrow">{{ fig }}</span>{% endif %}
+    </div>
+
+    <h1>{{ heading_html | safe }}</h1>
+
+    {% if deck %}<p class="deck">{{ deck }}</p>{% endif %}
+
+  </div>
+</header>

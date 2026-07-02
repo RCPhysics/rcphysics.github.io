@@ -1,44 +1,154 @@
-# About
+# RCPhysics site: editing guide
 
-This is the GitHub Source for the academic profile of Dr. Richard C. Prince based on the academicpages template for GitHub Pages.
+How to update the content and images on rcphysics.com. You almost never need
+to touch HTML or CSS; nearly all edits are to a YAML file in `src/_data/` or
+to a page's front matter.
 
-**Academic Pages is a Github Pages template for academic websites.**
-See more info at https://academicpages.github.io/
+## Preview your changes
 
-# Reminders & Quicklinks
+```bash
+npm install     # once, first time only
+npm run dev     # serves http://localhost:8080 with live reload
+```
 
-|Page Name    |Link                                       |
-|-------------|-------------------------------------------|
-|Front Page   |[_pages/about.md](/_pages/about.md)        |
-|Guide Page   |[_pages/markdown.md](/_pages/markdown.md)  |
+Leave `npm run dev` running while you edit; the browser refreshes on save.
+Press `Ctrl+C` to stop. `npm run build` produces the final site in `_site/`.
 
-# Reminders
-- The front page is located at [_pages/about.md](/_pages/about.md)
+## How it's organized
 
-# Maintenance
+- **Content** (the lists you edit most) lives in `src/_data/*.yml`.
+- **Page intro copy** (headline, deck) lives in each page's front matter at the
+  top of `src/*.md`.
+- **Images** live in `src/assets/images/`.
 
-# For more info
+Rule of thumb: repeating things (publications, courses, people, equipment) are
+YAML; a page's opening headline and blurb are that page's `.md`.
 
-More info about configuring Academic Pages can be found in the guide, the growing wiki, and you can always ask a question on GitHub. The guides for the Minimal Mistakes theme (which this theme was forked from) might also be helpful.
+## What to edit for what
 
-# Maintenance
+| You want to…                     | Edit…                                    |
+| -------------------------------- | ---------------------------------------- |
+| Add / edit a publication         | `src/_data/publications.yml`             |
+| Change a research area           | `src/_data/strands.yml`                  |
+| Add equipment (LAMB)             | `src/_data/equipment.yml`                |
+| Add a lab member                 | `src/_data/members.yml` (`items:`)       |
+| Add a lab alum                   | `src/_data/members.yml` (`alumni:`)      |
+| Add / edit a course              | `src/_data/teaching.yml`                 |
+| Edit the CV                      | `src/_data/cv.yml`                       |
+| Update email / social links      | `src/_data/site.yml`                     |
+| Change the nav menu              | `src/_data/nav.yml`                      |
+| Change a page's headline or intro| that page's file in `src/` (front matter)|
+| Replace the logo                 | `src/assets/images/RCP-Logo.png`         |
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+## Adding content
 
-## Bugfixes and enhancements
+Each YAML file starts with a comment block describing its fields. Copy an
+existing entry and change the values; keep the indentation identical (two
+spaces, no tabs). A few common ones:
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
+**Publication** (`publications.yml`, newest at the top):
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+```yaml
+- year: 2025
+  type: journal            # journal | conf | chapter
+  role: co-author          # or "first author", "PI", …
+  venue: Science
+  title: Full title, with a period at the end.
+  authors:
+    - Some Coauthor
+    - { me: true, name: Richard C. Prince }   # this flag bolds your name
+    - et al.
+  abstract: >-
+    One paragraph. Shown when the reader expands the entry.
+  tags:
+    - { tone: glass, label: "CARS · SHG" }     # tone: glass | uv | signal | ""
+  link: https://…/paper.pdf
+  doi: 10.1126/science.xxx                      # optional
+```
 
----
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
+**Equipment card** (`equipment.yml`):
 
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+```yaml
+- id: "KIT · 04"
+  title: New instrument name
+  photo: ""                # filename in assets/images/equipment/, "" = placeholder
+  desc: >-
+    One or two sentences on what it does.
+  meta: [tag one, tag two]
+```
+
+**Lab member** (`members.yml`, under `items:`):
+
+```yaml
+- name: First Last
+  role: Graduate Student
+  since: "2025"
+  initials: FL             # shown if no photo
+  photo: first-last.jpg    # in assets/images/members/, or omit for initials
+  bio: >-
+    A sentence or two.
+```
+
+**Lab alum** (`members.yml`, under `alumni:`): uncomment the sample block.
+While the list is empty the page shows a "will be listed here" placeholder.
+
+```yaml
+alumni:
+  - name: First Last
+    role: Graduate Student · 2021–2024
+    now: PhD student, University of Somewhere   # optional
+```
+
+## Adding images
+
+Drop the file into the right folder, then reference it by **filename only** in
+the matching YAML field:
+
+| Image                    | Put it in…                        | Point at it via…                  |
+| ------------------------ | --------------------------------- | --------------------------------- |
+| Equipment photo          | `src/assets/images/equipment/`    | `photo:` in `equipment.yml`       |
+| Lab member photo         | `src/assets/images/members/`      | `photo:` in `members.yml`         |
+| Site logo                | `src/assets/images/`              | already wired (`RCP-Logo.png`)    |
+| Home page portrait       | `src/assets/images/`              | already wired (`profile.png`)     |
+
+Notes:
+- Use JPG or PNG. Equipment boxes are 4:3 and member photos are square; the
+  image is center-cropped to fit, so roughly-that-shape photos look best.
+- To swap the logo or portrait, save the new file over the existing one using
+  the **same filename** and it updates everywhere. A transparent PNG works well
+  for the logo (the header background is cream, so use dark or teal artwork).
+
+## Editing a page's headline and intro
+
+Open the page's file in `src/` (for example `src/research.md`) and edit the
+front matter between the `---` lines:
+
+```yaml
+eyebrow: "§ 01 · Research"     # small label above the title (leave the number)
+heading_html: 'What the lab <em>works on</em>.'   # <em> = the teal italic word
+deck: >-
+  The italic sentence under the headline.
+```
+
+The home page also has `hero_meta` (the four stat cells under the portrait);
+edit those label/value/note lines to change the stats.
+
+## Where each page's content comes from
+
+| Page          | Front matter file    | Content data                         |
+| ------------- | -------------------- | ------------------------------------ |
+| Home          | `src/index.md`       | `strands.yml` + `hero_meta`          |
+| Research      | `src/research.md`    | `strands.yml`                        |
+| LAMB          | `src/lamb.md`        | `equipment.yml`, `members.yml`       |
+| Publications  | `src/publications.md`| `publications.yml`                   |
+| Teaching      | `src/teaching.md`    | `teaching.yml`                       |
+| CV            | `src/cv.md`          | `cv.yml`                             |
+| Contact       | `src/contact.md`     | `site.yml` (email + social)          |
+
+## If something breaks
+
+If `npm run dev` shows an error after an edit, it is almost always a YAML
+indentation or punctuation issue in the file you just changed. Check that:
+list items line up, you used two spaces (never tabs), and any value containing
+a colon is wrapped in quotes. Undo your last change and the site will build
+again.

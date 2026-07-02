@@ -1,0 +1,91 @@
+{# ===========================================================================
+   layouts/home.njk
+   ---------------------------------------------------------------------------
+   Home page. Custom hero (portrait-on-left variant, chosen at port time)
+   with display heading, italic lede, and a four-cell meta strip. Below the
+   hero: a research-strands summary (reuses strands.yml) and a closing CTA.
+   Editorial copy comes from index.md front matter; stats from `hero_meta`.
+   ============================================================================ #}
+{% extends "base.njk" %}
+
+{% block content %}
+
+{# --- Hero ---------------------------------------------------------------- #}
+<section class="hero">
+  <div class="container">
+
+    <div class="hero-eyebrow-row">
+      <span class="eyebrow">{{ eyebrow }}</span>
+      <span class="eyebrow">ETSU · Johnson City, Tenn.</span>
+    </div>
+
+    <div class="hero-layout-left">
+      <div class="hero-portrait">
+        <img src="/assets/images/profile.png" alt="{{ site.author }}"
+             style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+      </div>
+
+      <div>
+        <h1 class="display">{{ heading_html | safe }}</h1>
+        <p class="lede">{{ deck }}</p>
+
+        <div style="margin-top:32px; display:flex; gap:16px; flex-wrap:wrap;">
+          <a class="btn btn-glass" href="/research/">Explore the research ↗</a>
+          <a class="btn btn-secondary" href="/lamb/">Inside the LAMB</a>
+        </div>
+      </div>
+    </div>
+
+    {% if hero_meta %}
+      <dl class="hero-meta">
+        {% for m in hero_meta %}
+          <div>
+            <dt>{{ m.label }}</dt>
+            <dd><strong>{{ m.value }}</strong>{{ m.note }}</dd>
+          </div>
+        {% endfor %}
+      </dl>
+    {% endif %}
+
+  </div>
+</section>
+
+{# --- Research strands summary ------------------------------------------- #}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="id-col">
+        <span class="eyebrow">Research</span>
+      </div>
+      <h2>Three interconnected lines of work.</h2>
+    </div>
+
+    {% for s in strands.items %}
+      <a class="service-row" href="/research/" style="text-decoration:none; color:inherit;">
+        <div class="num">{{ s.num }}</div>
+        <div class="title">{{ s.title }}</div>
+        <div class="desc">{{ s.desc }}</div>
+        <div class="price">{% for t in s.tags %}{{ t }}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+{# --- Closing CTA --------------------------------------------------------- #}
+<section class="section">
+  <div class="container">
+    <div class="specimen clinical" style="display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap;">
+      <span class="tick tl"></span><span class="tick tr"></span>
+      <span class="tick bl"></span><span class="tick br"></span>
+      <div>
+        <span class="eyebrow">Get in touch</span>
+        <p style="font-family:var(--font-display); font-style:italic; font-size:26px; color:var(--ink); margin:12px 0 0; max-width:34ch;">
+          Students, collaborators, and the plain curious are all welcome.
+        </p>
+      </div>
+      <a class="btn btn-glass" href="/contact/">|&nbsp;get in touch<span style="font-weight:800;">⟩</span></a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
