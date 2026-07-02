@@ -1,0 +1,35 @@
+# =========================================================================
+# Research strands — the three interconnected areas of the lab's work.
+# Rendered on /research/ (and summarized on the home page) as service-rows.
+# Source: the "Research" section of the live site's about page.
+#
+# Fields:
+#   num    — two-digit index shown in the mono gutter (kept manually)
+#   title  — display-font strand name
+#   desc   — one- or two-sentence description
+#   tags   — short mono labels shown on the right
+# =========================================================================
+
+items:
+  - num: "01"
+    title: Vibrational microscopy
+    desc: >-
+      Developing novel SRS and Raman-based methods to study microbial and
+      mycological systems, including the oleaginous yeasts relevant to
+      biomanufacturing. Label-free chemistry, imaged in living systems.
+    tags: [SRS, Raman, label-free]
+
+  - num: "02"
+    title: Nonlinear imaging of disease
+    desc: >-
+      Using nonlinear optical techniques to investigate how disease reshapes
+      tissue at the molecular level, from lipid metabolism in cartilage to
+      cardiac tissue recovery.
+    tags: [nonlinear, TSFG, tissue]
+
+  - num: "03"
+    title: Open-source biomanufacturing
+    desc: >-
+      Designing open-hardware instruments and curricula to make precision
+      bioengineering more accessible, particularly for the Appalachian region.
+    tags: [open-hardware, bioprocess, workforce]

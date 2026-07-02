@@ -1,0 +1,35 @@
+{# ===========================================================================
+   partials/header.njk
+   ---------------------------------------------------------------------------
+   The slim, sticky top header — variant chosen from the original Tweaks
+   panel. Translates the `Header` component in chrome.jsx (variant='top').
+   ---------------------------------------------------------------------------
+   `nav.items` comes from _data/nav.yml. We filter out home and contact in
+   the main bar — home is on the logo, contact is the right-side button.
+   The `is-current` class is set by comparing each item's url to the
+   current page's url (Eleventy provides `page.url`).
+   ============================================================================ #}
+<header class="site-header">
+  <div class="container site-header-inner">
+
+    <a class="logo" href="/">
+      <img src="/assets/images/RCP-Logo.png" alt="RCPhysics">
+    </a>
+
+    <nav class="site-nav">
+      {% for item in nav.items %}
+        {% if item.id != 'home' and item.id != 'contact' %}
+          <a href="{{ item.url }}"
+             class="{% if page.url == item.url %}is-current{% endif %}">
+            {{ item.label }}
+          </a>
+        {% endif %}
+      {% endfor %}
+
+      <a href="/contact/" class="btn btn-glass" style="margin-left:12px;">
+        |&nbsp;get in touch<span style="font-weight:800;">⟩</span>
+      </a>
+    </nav>
+
+  </div>
+</header>

@@ -1,0 +1,28 @@
+# =========================================================================
+# Site-wide metadata. Available in all templates as `site.*`.
+# Edit this file to update author info, social links, etc., everywhere
+# at once.
+# =========================================================================
+
+title:       Richard C. Prince, PhD — RCPhysics
+description: >-
+  Assistant Professor at ETSU. Director of the LAMB — Laboratory for
+  Advanced Microscopy & Bioengineering.
+
+author:      Richard C. Prince, PhD
+short_name:  RCP
+email:       princerc@etsu.edu
+
+# Copyright year shown in the footer. Bump annually.
+year: 2026
+
+# Scholarly profiles
+scholar:  https://scholar.google.com/citations?hl=en&user=Ga3puIIAAAAJ
+orcid:    https://orcid.org/0000-0003-1199-9465
+github:   https://github.com/rcphysics
+
+# Social
+bluesky:  https://bsky.app/profile/rcphysics.bsky.social
+mastodon: https://fediscience.org/@rcphysics
+linkedin: https://www.linkedin.com/in/RCPhysics
+keybase:  https://keybase.io/RCPhysics

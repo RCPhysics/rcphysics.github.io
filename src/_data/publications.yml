@@ -1,0 +1,247 @@
+# =========================================================================
+# Publications — the canonical record.
+# Add new entries at the top. Sorted in templates by year descending.
+#
+# Schema:
+#   year:     integer
+#   type:     journal | conf | chapter
+#   role:     "first author" | "co-author" | "PI" | etc.
+#   venue:    string — journal / conference / publisher
+#   title:    string — full title with terminal period
+#   authors:  list of either bare strings, or maps with {me: true, name: ...}
+#             — the `me` flag bolds the entry in templates.
+#   abstract: string — paragraph; renders behind an expand toggle
+#   tags:     list of {tone, label}; tone is glass | uv | signal | "" (default)
+#   link:     URL to PDF or DOI landing page
+#   doi:      string, optional — shown after the PDF link
+# =========================================================================
+
+- year: 2025
+  type: journal
+  role: co-author
+  venue: Science
+  title: Superstable lipid vacuoles endow cartilage with its shape and biomechanics.
+  authors:
+    - Raul Ramos
+    - Kim T. Pham
+    - { me: true, name: Richard C. Prince }
+    - et al.
+  abstract: >-
+    This study identifies lipochondrocytes, lipid-filled cells in mammalian
+    cartilage, which use de novo lipogenesis to produce stable lipid droplets
+    that influence cartilage biomechanics by reducing stiffness and
+    resilience — providing a unique alternative to traditional extracellular
+    matrix structures.
+  tags:
+    - { tone: glass, label: "CARS · SHG" }
+    - { tone: "",    label: "cartilage" }
+  link: https://www.rcphysics.com/files/papers/Ramos et al. - 2025.pdf
+  doi: 10.1126/science.xxx
+
+- year: 2024
+  type: conf
+  role: first author
+  venue: 2024 ASEE Annual Conference & Exposition
+  title: "Biomanufacturing & engineering for the Appalachian Highlands: updates on the development of a scalable bioengineering program in rural settings."
+  authors:
+    - { me: true, name: Richard C. Prince }
+    - Pamela Mims
+    - Aruna Kilaru
+    - Eric Jorgenson
+  abstract: >-
+    A description of initial efforts to create a biotechnology and
+    bioprocessing workforce-development program focused on downstream
+    processing in the Appalachian Highlands. Includes curriculum design,
+    community-college partnerships, and lessons from the first year.
+  tags:
+    - { tone: uv, label: "workforce" }
+    - { tone: "", label: "curriculum" }
+  link: https://www.rcphysics.com/files/papers/Prince et al. - 2024.pdf
+
+- year: 2022
+  type: chapter
+  role: first author
+  venue: Stimulated Raman Scattering Microscopy — Techniques and Applications, Elsevier
+  title: "Stimulated Raman scattering: ensembles to single molecules."
+  authors:
+    - { me: true, name: Richard C. Prince }
+    - Eric O. Potma
+  abstract: >-
+    Book chapter providing an overview of the discovery and history of
+    stimulated Raman scattering with extensive examples of its use cases
+    throughout the years — from bulk solutions to single-molecule limits.
+  tags:
+    - { tone: glass, label: SRS }
+    - { tone: "",    label: review }
+  link: https://www.rcphysics.com/files/papers/Prince and Potma - 2022.pdf
+
+- year: 2021
+  type: journal
+  role: first author
+  venue: Journal of Biomedical Optics
+  title: "Coherent Raman scattering microscopy: capable solution in search of a larger audience."
+  authors:
+    - { me: true, name: Richard Prince }
+    - Eric Potma
+  abstract: >-
+    A perspective piece arguing for the broader adoption of coherent Raman
+    techniques outside the small community of method developers — what would
+    have to change for these tools to be used routinely in clinical and
+    industrial labs.
+  tags:
+    - { tone: glass, label: CARS }
+    - { tone: "",    label: perspective }
+  link: https://doi.org/10.1117/1.jbo.26.6.060601
+  doi: 10.1117/1.jbo.26.6.060601
+
+- year: 2020
+  type: chapter
+  role: first author
+  venue: Three-Dimensional Microfabrication Using Two-Photon Polymerization, 2nd ed., William Andrew
+  title: Visualizing TPP structures with coherent Raman scattering microscopy.
+  authors:
+    - { me: true, name: Richard C. Prince }
+    - Eric O. Potma
+  abstract: >-
+    A chapter on the application of coherent Raman scattering microscopy to
+    the visualization and characterization of two-photon polymerized
+    structures — a useful contrast for the printed monomer and its
+    conversion to polymer.
+  tags:
+    - { tone: glass, label: CARS }
+    - { tone: "",    label: TPP }
+  link: https://www.rcphysics.com/files/papers/Prince et al. - 2020.pdf
+
+- year: 2020
+  type: journal
+  role: co-author
+  venue: "Light: Science & Applications"
+  title: Infrared chemical imaging through non-degenerate two-photon absorption in silicon-based cameras.
+  authors:
+    - David Knez
+    - Adam M. Hanninen
+    - { me: true, name: Richard C. Prince }
+    - Eric O. Potma
+    - Dimitry A. Fishman
+  abstract: >-
+    A novel method for fast, cost-effective mid-infrared chemical imaging
+    using non-degenerate two-photon absorption directly on standard silicon
+    CCDs — enabling wide-field imaging and videos with high chemical
+    selectivity and minimal complexity.
+  tags:
+    - { tone: signal, label: "IR imaging" }
+    - { tone: "",     label: NDTPA }
+  link: https://www.rcphysics.com/files/papers/Knez et al. - 2020.pdf
+
+- year: 2020
+  type: journal
+  role: co-author
+  venue: The Ocular Surface
+  title: "Eicosapentaenoic acid (EPA) activates PPARγ signaling leading to cell cycle exit, lipid accumulation, and autophagy in human meibomian gland epithelial cells (hMGEC)."
+  authors:
+    - Sun Kim
+    - Chang Rho
+    - Jinseor Kim
+    - Yilu Xie
+    - { me: true, name: Richard Prince }
+    - Khawla Mustafa
+    - Eric Potma
+    - Donald Brown
+    - James Jester
+  abstract: >-
+    EPA signalling drives lipid biology in meibomian gland epithelial cells —
+    cell-cycle exit, lipid accumulation, autophagy — with implications for
+    dry-eye therapeutics. Optical imaging confirms the lipid phenotypes.
+  tags:
+    - { tone: uv, label: "cell biology" }
+    - { tone: "", label: lipid }
+  link: https://doi.org/10.1016/j.jtos.2020.04.012
+
+- year: 2019
+  type: journal
+  role: first author
+  venue: "Light: Science & Applications"
+  title: "Going visible: high-resolution coherent Raman imaging of cells and tissues."
+  authors:
+    - { me: true, name: Richard Prince }
+    - Eric Potma
+  abstract: >-
+    Demonstrating that pushing CARS into the visible regime — instead of
+    staying near-IR by convention — yields a substantial resolution gain on
+    cell- and tissue-scale samples without sacrificing chemical specificity.
+  tags:
+    - { tone: glass, label: CARS }
+    - { tone: "",    label: resolution }
+  link: https://doi.org/10.1038/s41377-018-0119-5
+
+- year: 2018
+  type: journal
+  role: co-author
+  venue: Biomedical Optics Express
+  title: High-resolution infrared imaging of biological samples with third-order sum-frequency generation microscopy.
+  authors:
+    - Adam Hanninen
+    - { me: true, name: Richard Prince }
+    - Raul Ramos
+    - Maksim Plikus
+    - Eric Potma
+  abstract: >-
+    Third-order sum-frequency generation as a route to IR chemical imaging
+    at higher spatial resolution than conventional IR microscopy — applied
+    to skin and other thin biological samples.
+  tags:
+    - { tone: signal, label: TSFG }
+    - { tone: "",     label: IR }
+  link: https://doi.org/10.1364/boe.9.004807
+
+- year: 2018
+  type: journal
+  role: co-author
+  venue: IEEE J. of Selected Topics in Quantum Electronics
+  title: Triple modal coherent nonlinear imaging with vibrational contrast.
+  authors:
+    - Adam Hanninen
+    - { me: true, name: Richard Prince }
+    - Eric Potma
+  abstract: >-
+    Combining three coherent nonlinear modalities on one bench with
+    vibrational contrast as the through-line — instrumentation, registration,
+    and demonstration on biological samples.
+  tags:
+    - { tone: glass, label: multimodal }
+  link: https://doi.org/10.1109/jstqe.2018.2846030
+
+- year: 2017
+  type: journal
+  role: first author
+  venue: Proceedings of the National Academy of Sciences
+  title: Crossing the arterial wall with CARS.
+  authors:
+    - { me: true, name: Richard Prince }
+    - Eric Potma
+  abstract: >-
+    A commentary on CARS imaging of arterial-wall lipid deposits — the
+    implications for atherosclerosis research and what the modality needs in
+    order to be useful at the clinical end of the bench-to-bedside pipeline.
+  tags:
+    - { tone: glass, label: CARS }
+    - { tone: "",    label: atherosclerosis }
+  link: https://doi.org/10.1073/pnas.1704101114
+
+- year: 2016
+  type: journal
+  role: first author
+  venue: Chemical Reviews
+  title: "Stimulated Raman scattering: from bulk to nano."
+  authors:
+    - { me: true, name: Richard Prince }
+    - Renee Frontiera
+    - Eric Potma
+  abstract: >-
+    A comprehensive review of the history, principles, and diverse
+    applications of SRS across molecular sciences — from gas-phase ensembles
+    to plasmonic single-molecule limits. Cited 1000+ times.
+  tags:
+    - { tone: glass, label: SRS }
+    - { tone: "",    label: review }
+  link: https://www.rcphysics.com/files/papers/Prince2017.pdf

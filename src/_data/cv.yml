@@ -1,0 +1,153 @@
+# =========================================================================
+# CV data — rendered on /cv/. One list per section; each renders through
+# the same cv-row structure (when · what/org · where).
+# Source: the live site's CV page (rcphysics.com/cv/).
+#
+# Row fields:
+#   when   — left mono date/date-range column
+#   title  — display-font primary line
+#   org    — secondary line (institution, advisor, detail)
+#   where  — right-side mono label (place / tag); optional
+# =========================================================================
+
+education:
+  - when: "2021"
+    title: PhD, Biomedical Engineering & Biophotonics
+    org: "University of California, Irvine · Advisor: Eric O. Potma · NSF IGERT"
+    where: Irvine, CA
+  - when: "2018"
+    title: MS, Biomedical Engineering
+    org: University of California, Irvine
+    where: Irvine, CA
+  - when: "2015"
+    title: BA, College Scholars Program
+    org: >-
+      University of Tennessee, Knoxville · Science Policy & Administration;
+      Honors Academic Physics · Cum Laude · Baker Scholar for Public Policy
+    where: Knoxville, TN
+
+experience:
+  - when: "2021–now"
+    title: Assistant Professor & BMET Coordinator
+    org: >-
+      East Tennessee State University. Mentored students across process
+      control, biomedical education, photonic sensors, and assistive devices;
+      aligned the BMET curriculum with industry standards; coordinated
+      biomedical industrial internships. Secured $1.3M+ (BioMADE) for
+      biomanufacturing workforce development and executed $120K+ in teaching
+      and lab renovations.
+    where: Johnson City, TN
+  - when: "2020–2021"
+    title: Teaching Assistant, Biomedical Engineering
+    org: >-
+      UC Irvine. Built a distance-based data-acquisition lab; introduced
+      biomedical sensor design and open-source LabVIEW control of Arduino
+      hardware; lectured on engineering ethics and inclusive design.
+    where: Irvine, CA
+
+research:
+  - when: "2021–now"
+    title: Laboratory for Advanced Microscopy & Bioengineering (The LAMB)
+    org: >-
+      ETSU. Founded and leads the LAMB — Raman microspectroscopy, nonlinear
+      optical imaging, and bioengineering. $1.3M+ external funding as PI on a
+      BioMADE grant; $150K+ in gifts and donations; interdisciplinary
+      collaborations across Biomedical Sciences, Biology, Chemistry,
+      Geosciences, and Education.
+    where: PI
+  - when: "2016–2021"
+    title: Potma Labs — Advancing Nonlinear Vibrational Imaging
+    org: >-
+      UC Irvine. Developed and demonstrated Third-Order Sum Frequency
+      Generation, a nonlinear imaging modality with vibrational contrast; built
+      a computer-controlled variable-gain PMT detection system; characterized
+      lipogenesis via SHG and SRS; contributed to $1M+ in NSF/NIH/DOE
+      proposals. Lab manager and safety officer from 2017.
+    where: Irvine, CA
+  - when: "2014–2015"
+    title: Energy Policy Research Group
+    org: >-
+      UTK & Oak Ridge National Laboratory. Thesis on the feasibility of wind
+      energy in West Tennessee; net-metering and low-income energy-efficiency
+      plans for the TVA region.
+    where: Knoxville, TN
+  - when: "2012–2014"
+    title: Laser Spectroscopy & Soft-Matter Biophysics
+    org: >-
+      UTK & ORNL. Femtosecond pump-probe spectroscopy of drug-membrane
+      interactions; protein mechanics and secondary-structure stiffness via
+      Raman & Brillouin spectroscopy.
+    where: Knoxville, TN
+
+grants:
+  - when: "2023"
+    title: Completing the Bioindustrial Pipeline
+    org: >-
+      $3.2M to develop biomanufacturing education products — lab modules,
+      teaching materials, internships, and program evaluation.
+    where: PI
+  - when: "2024"
+    title: ABET IDEAL Scholar
+    org: Week-long training on program evaluation and assessment.
+    where: ABET
+  - when: "2016–2019"
+    title: National Science Foundation IGERT
+    org: Traineeship in Biophotonics Across Energy, Space, and Time.
+    where: NSF
+  - when: "2019"
+    title: Catalyzing Advocacy in Science & Engineering (CASE)
+    org: AAAS workshop, Washington, D.C.
+    where: AAAS
+  - when: "2017–2018"
+    title: Science Rising Grant
+    org: Union of Concerned Scientists.
+    where: UCS
+
+service:
+  - when: "2022–now"
+    title: Bioengineering & Synthetic Biology Steering
+    org: >-
+      ETSU. University-wide synthetic-biology task force; led development of a
+      Bioengineering major and worked to establish the Valleybrook Campus as a
+      regional biotechnology hub, partnering with BAE Systems' Holston facility.
+    where: ETSU
+  - when: "2023–2024"
+    title: Mechatronics Engineering Degree Program
+    org: ETSU. Co-developed the mechatronics curriculum; led first- and second-year design.
+    where: ETSU
+  - when: "now"
+    title: ETSU Committee Service
+    org: >-
+      Chair, EETS Curriculum Innovation and Facilities Improvement committees;
+      Interim Faculty Senator; member of the Synthetic Biology & Bioengineering,
+      CBAT Strategic Planning, and CBAT Research committees.
+    where: ETSU
+  - when: "2018–now"
+    title: Seed Consulting Group — VP, Consulting Operations
+    org: >-
+      501(c)3 providing ~$1.5M/yr in pro-bono consulting to sustainability
+      organizations. Directs 60+ consultants and 8 PMs; established East Coast
+      operations and Agile/SCRUM practices org-wide.
+    where: nonprofit
+
+honors:
+  - when: "2024"
+    title: CBAT Outstanding New Faculty Member
+    org: East Tennessee State University.
+    where: ETSU
+  - when: "2017"
+    title: Member, Sigma Xi — The Research Honor Society
+    org: ""
+    where: Sigma Xi
+  - when: "2013"
+    title: Member, Sigma Pi Sigma Physics Honor Society
+    org: ""
+    where: ΣΠΣ
+  - when: "2014"
+    title: National Society of Physics Students Leadership Scholarship
+    org: ""
+    where: SPS
+  - when: "2012–2014"
+    title: Robert Talley Physics Leadership Award
+    org: University of Tennessee, Knoxville.
+    where: UTK

@@ -1,0 +1,171 @@
+{# ===========================================================================
+   layouts/publications.njk
+   ---------------------------------------------------------------------------
+   Translation of publications.jsx. Major structural choices:
+
+   1. Sorting happens in the template via Nunjucks: publications | sort.
+      No build-time hook needed.
+
+   2. Client-side filtering & expand/collapse: ~40 lines of vanilla JS at the
+      bottom. We render ALL pubs and use data-attributes for filter state.
+      This is a deliberate choice — the page works without JS (filters just
+      don't appear, all pubs visible, abstracts collapsed by default with a
+      CSS-only fallback via :target or always-expanded).
+
+   3. Author rendering: a small macro at the top, since the {me: true} flag
+      needs to bold the matching entry.
+   ============================================================================ #}
+
+{% extends "base.njk" %}
+
+{% block content %}
+
+{# --- Author list macro: bolds the entry whose `me` flag is true. ----------- #}
+{% macro authors(list) %}
+  {% for a in list -%}
+    {%- if a is mapping and a.me -%}<strong>{{ a.name }}</strong>
+    {%- elif a is mapping -%}{{ a.name }}
+    {%- else -%}{{ a }}
+    {%- endif -%}
+    {%- if not loop.last -%}, {% endif -%}
+  {%- endfor %}
+{% endmacro %}
+
+{# --- Page title block ----------------------------------------------------- #}
+{% include "partials/page-title.njk" %}
+
+<section class="section">
+  <div class="container">
+
+    {# --- Filter toolbar -------------------------------------------------- #}
+    <div class="pubs-toolbar">
+      <div class="tag-row" data-filter-row>
+        <span class="tag plain is-clickable is-active" data-filter="all">All</span>
+        <span class="tag plain is-clickable" data-filter="journal">Journal</span>
+        <span class="tag plain is-clickable" data-filter="chapter">Books / chapters</span>
+        <span class="tag plain is-clickable" data-filter="conf">Conference</span>
+        <span class="tag plain is-clickable" data-filter="first">First-author</span>
+      </div>
+      <span class="count" data-pubs-count>
+        {{ publications | length }} of {{ publications | length }} · sorted by year
+      </span>
+    </div>
+
+    {# --- Publication list ------------------------------------------------ #}
+    <div data-pubs-list>
+      {% for pub in publications | sort(attribute='year', reverse=true) %}
+        <article class="pub-item"
+                 data-pub
+                 data-type="{{ pub.type }}"
+                 data-role="{{ pub.role }}">
+          <div class="year">
+            {{ pub.year }}
+            <span class="role">{{ pub.role }}</span>
+          </div>
+
+          <div class="body">
+            <div class="venue">
+              {{ pub.type | upper }} · <em>{{ pub.venue }}</em>
+            </div>
+
+            <h3>
+              <a href="{{ pub.link }}" target="_blank" rel="noopener">
+                {{ pub.title }}
+              </a>
+            </h3>
+
+            <div class="authors">{{ authors(pub.authors) }}</div>
+
+            <div class="abstract">
+              <p style="margin:0;">{{ pub.abstract }}</p>
+            </div>
+
+            <div class="actions">
+              <button type="button" data-toggle-abstract>+ show abstract</button>
+              <a class="pill"
+                 href="{{ pub.link }}"
+                 target="_blank"
+                 rel="noopener"
+                 style="text-decoration:none;">
+                Read PDF <span class="arrow">↗</span>
+              </a>
+              {% if pub.doi %}
+                <span style="color:var(--ink-3);">DOI · {{ pub.doi }}</span>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="tags-col">
+            {% for t in pub.tags %}
+              <span class="tag {{ t.tone }}">{{ t.label }}</span>
+            {% endfor %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    {# --- Footer link to Scholar ----------------------------------------- #}
+    <div style="margin-top:48px; padding-top:24px;
+                border-top:1px solid var(--rule-strong);
+                display:flex; justify-content:space-between;
+                align-items:center; flex-wrap:wrap; gap:16px;">
+      <p style="font-family:var(--font-display); font-style:italic;
+                font-size:18px; color:var(--ink-2); margin:0; max-width:50ch;">
+        The complete, regularly-updated record lives on Google Scholar.
+      </p>
+      <a class="btn btn-secondary"
+         href="{{ site.scholar }}"
+         target="_blank" rel="noopener">
+        Open Scholar profile ↗
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{# --- Page-local script: filters + abstract toggle ---------------------- #}
+<script>
+(function () {
+  'use strict';
+  var filterRow = document.querySelector('[data-filter-row]');
+  var list      = document.querySelector('[data-pubs-list]');
+  var countEl   = document.querySelector('[data-pubs-count]');
+  if (!filterRow || !list) return;
+
+  var pubs  = Array.prototype.slice.call(list.querySelectorAll('[data-pub]'));
+  var total = pubs.length;
+
+  // Filter pill clicks ---------------------------------------------------
+  filterRow.addEventListener('click', function (e) {
+    var pill = e.target.closest('[data-filter]');
+    if (!pill) return;
+    filterRow.querySelectorAll('[data-filter]').forEach(function (p) {
+      p.classList.toggle('is-active', p === pill);
+    });
+    var f = pill.getAttribute('data-filter');
+    var shown = 0;
+    pubs.forEach(function (p) {
+      var type = p.getAttribute('data-type');
+      var role = p.getAttribute('data-role');
+      var show =
+        f === 'all'   ? true :
+        f === 'first' ? role === 'first author' :
+                        type === f;
+      p.style.display = show ? '' : 'none';
+      if (show) shown += 1;
+    });
+    if (countEl) countEl.textContent = shown + ' of ' + total + ' · sorted by year';
+  });
+
+  // Abstract expand/collapse --------------------------------------------
+  list.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-toggle-abstract]');
+    if (!btn) return;
+    var item = btn.closest('[data-pub]');
+    var open = item.classList.toggle('is-open');
+    btn.textContent = open ? '— hide abstract' : '+ show abstract';
+  });
+})();
+</script>
+
+{% endblock %}

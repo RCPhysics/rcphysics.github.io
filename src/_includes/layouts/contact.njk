@@ -1,0 +1,40 @@
+{# ===========================================================================
+   layouts/contact.njk
+   ---------------------------------------------------------------------------
+   Contact page. For now this is a direct-email card plus scholarly/social
+   links — no form backend yet. When a Formspree/Basin endpoint is chosen,
+   drop a <form> into the .contact-card using the .field / .input styles that
+   already exist in styles.css, and post to the endpoint.
+   ============================================================================ #}
+{% extends "base.njk" %}
+
+{% block content %}
+
+{% include "partials/page-title.njk" %}
+
+<section class="section no-rule">
+  <div class="container-tight">
+    <div class="specimen clinical contact-card">
+      <span class="tick tl"></span><span class="tick tr"></span>
+      <span class="tick bl"></span><span class="tick br"></span>
+
+      <span class="eyebrow">Direct</span>
+      <p style="font-family:var(--font-display); font-style:italic; font-size:26px; color:var(--ink); margin:12px 0 24px; max-width:40ch;">
+        The fastest way to reach me is plain email.
+      </p>
+
+      <a class="btn btn-glass" href="mailto:{{ site.email }}">{{ site.email }}</a>
+
+      <div style="margin-top:40px; padding-top:24px; border-top:1px solid var(--rule-2); display:grid; grid-template-columns:repeat(2, auto); gap:12px 56px; justify-content:start;">
+        <a href="{{ site.scholar }}"  target="_blank" rel="noopener">Google Scholar ↗</a>
+        <a href="{{ site.orcid }}"    target="_blank" rel="noopener">ORCID ↗</a>
+        <a href="{{ site.github }}"   target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="{{ site.bluesky }}"  target="_blank" rel="noopener">Bluesky ↗</a>
+        <a href="{{ site.mastodon }}" target="_blank" rel="noopener">Mastodon ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

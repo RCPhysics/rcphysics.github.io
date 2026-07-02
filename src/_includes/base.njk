@@ -1,0 +1,47 @@
+{# ===========================================================================
+   base.njk
+   ---------------------------------------------------------------------------
+   The HTML shell. Every layout extends this. The {% block content %} is
+   where pages slot in.
+   ---------------------------------------------------------------------------
+   We set the `rcp` class on <body> so the styles in colors_and_type.css
+   (which scope to `.rcp`) actually apply. The original React app set this
+   implicitly by being mounted inside <body>; here we make it explicit.
+   ============================================================================ #}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or site.title }}</title>
+  <meta name="description"
+        content="{{ description or site.description }}">
+
+  {# Favicons --------------------------------------------------------------- #}
+  <link rel="icon" href="/assets/favicons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32"
+        href="/assets/favicons/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180"
+        href="/assets/favicons/apple-touch-icon.png">
+
+  {# Stylesheets — order matters: tokens first, then component styles ------- #}
+  <link rel="stylesheet" href="/styles/colors_and_type.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+
+  {# Open Graph / social --------------------------------------------------- #}
+  <meta property="og:title" content="{{ title or site.title }}">
+  <meta property="og:description"
+        content="{{ description or site.description }}">
+  <meta property="og:type" content="website">
+</head>
+
+<body class="rcp">
+  {% include "partials/header.njk" %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "partials/footer.njk" %}
+</body>
+</html>

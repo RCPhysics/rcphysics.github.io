@@ -1,0 +1,35 @@
+# =========================================================================
+# LAMB equipment & technical expertise — the tools and methods the lab
+# builds and operates. Rendered on /lamb/ as work-cards. The science these
+# tools are pointed at lives on the Research page (see strands.yml).
+#
+# Fields: id (mono label) · title · desc · meta (short mono tags)
+#   photo — filename of a photo in src/assets/images/equipment/. Leave blank
+#           ("") to show the placeholder box; fill it in to swap in the image.
+# =========================================================================
+
+items:
+  - id: "KIT · 01"
+    title: Raman & SRS spectroscopy
+    photo: ""
+    desc: >-
+      Label-free vibrational chemical imaging and spectral fingerprinting,
+      from single spectra to hyperspectral maps of living samples.
+    meta: [Raman, SRS, hyperspectral]
+
+  - id: "KIT · 02"
+    title: Nonlinear optical microscopy
+    photo: ""
+    desc: >-
+      Second-harmonic generation, stimulated Raman scattering, and third-order
+      sum-frequency generation with vibrational contrast, built on custom
+      variable-gain PMT detection.
+    meta: [SHG, TSFG, PMT]
+
+  - id: "KIT · 03"
+    title: Open-hardware & instrument control
+    photo: ""
+    desc: >-
+      1–2 liter open-source bioreactors, LabVIEW and Arduino-based automation,
+      and photonic sensor design — documented so other labs can build them too.
+    meta: [open-hardware, LabVIEW, sensors]

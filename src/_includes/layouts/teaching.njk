@@ -1,0 +1,50 @@
+{# ===========================================================================
+   layouts/teaching.njk
+   ---------------------------------------------------------------------------
+   Teaching page: philosophy deck (page-title) · course-cards · mentorship
+   tag row. Data: _data/teaching.yml.
+   ============================================================================ #}
+{% extends "base.njk" %}
+
+{% block content %}
+
+{% include "partials/page-title.njk" %}
+
+<section class="section no-rule">
+  <div class="container">
+
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      {% for c in teaching.courses %}
+        <div class="course-card">
+          <div class="code">
+            <span class="label">{{ c.label }}</span>
+            {{ c.code }}
+          </div>
+          <div>
+            <h3>{{ c.title }}</h3>
+            <p>{{ c.desc }}</p>
+            <div class="meta-row">
+              {% for m in c.meta %}<span>{{ m }}</span>{% if not loop.last %}<span>·</span>{% endif %}{% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {# --- Mentorship ------------------------------------------------------ #}
+    <div class="section-head" style="margin-top:64px;">
+      <div class="id-col">
+        <span class="eyebrow">Mentorship</span>
+      </div>
+      <h2>Students are mentored across a wide range of problems.</h2>
+    </div>
+    <div class="tag-row" style="display:flex; gap:6px; flex-wrap:wrap;">
+      {% for m in teaching.mentorship %}
+        <span class="tag glass">{{ m }}</span>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
